@@ -1,10 +1,15 @@
+Die brand;
 void setup()
 {
+	size(400, 400);
 	noLoop();
+	brand = new Die(200,200);
 }
 void draw()
 {
-	//your code here
+	background(255);
+	brand.show();
+	
 }
 void mousePressed()
 {
@@ -13,16 +18,26 @@ void mousePressed()
 class Die //models one single dice cube
 {
 	//variable declarations here
-	Die(int x, int y) //constructor
+	int myX, myY;
+	Die(int x,int y)
 	{
-		//variable initializations here
+	myX=x;
+	myY=y;
 	}
+
+
+	
 	void roll()
 	{
-		//your code here
-	}
+		
+			
+		}
+	
 	void show()
 	{
-		//your code here
-	}
+		for (myX=20; myX < 380; myX = myX+60) {
+			rect(myX, myY*5, 50, 50,8);
+}
+		}
+		
 }
