@@ -1,4 +1,5 @@
 Die brand;
+int count=0;
 void setup()
 {
 	size(400, 400);
@@ -15,16 +16,22 @@ void draw()
 		brand = new Die(R,C);
 		brand.show();
 		brand.roll();
-	
-}
-}
+		count = count + brand.numDot;
 
 	
+}
+}
+fill(0);
+strokeWeight(5);
+textSize(20);
+text("YOUR SUM IS " + count, 115,350);
+strokeWeight(1);	
 }
 
 void mousePressed()
 {
 	redraw();
+	count=0;
 }
 class Die //models one single dice cube
 {
@@ -41,6 +48,7 @@ class Die //models one single dice cube
 	
 	void roll()
 	{
+
 		if(numDot == 1)
 		{
 			fill(0);
